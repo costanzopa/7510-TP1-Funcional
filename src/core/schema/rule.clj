@@ -11,3 +11,8 @@
   "Determines if it's a rule."
   [line]
   (.contains line rule-assign))
+
+(defn get-rules
+  "Filter and determine the rules of the database."
+  [database-lines]
+  (distinct (filter is-rule? database-lines)))
